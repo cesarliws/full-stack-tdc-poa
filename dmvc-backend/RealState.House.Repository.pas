@@ -43,7 +43,7 @@ type
     HousesQueryAgentId: TLargeintField;
     procedure DataModuleCreate(Sender: TObject);
   private
-    fRepository: TRealStateRepository;
+    fRepository: TRepository;
     procedure BindConnection;
   protected
     function Connection: TFDConnection;
@@ -73,7 +73,7 @@ end;
 
 procedure THouseRepository.DataModuleCreate(Sender: TObject);
 begin
-  fRepository := TRealStateRepository.Create(Self);
+  fRepository := TRepository.Create(Self);
   BindConnection;
 end;
 

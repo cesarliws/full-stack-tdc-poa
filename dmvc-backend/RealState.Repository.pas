@@ -26,32 +26,8 @@ uses
   FireDAC.Comp.DataSet;
 
 type
-  TRealStateRepository = class(TDataModule)
-    AgentQuery: TFDQuery;
-    AgentQueryID: TLargeintField;
-    AgentQueryName: TWideStringField;
-    AgentQueryPhone: TWideStringField;
-    AgentQueryPicture: TWideStringField;
+  TRepository = class(TDataModule)
     Connection: TFDConnection;
-    HousesQuery: TFDQuery;
-    HousesQueryID: TLargeintField;
-    HousesQueryFavorite: TBooleanField;
-    HousesQueryAddress: TWideStringField;
-    HousesQueryCity: TWideStringField;
-    HousesQueryState: TWideStringField;
-    HousesQueryZipCode: TWideStringField;
-    HousesQueryBeds: TIntegerField;
-    HousesQueryBaths: TIntegerField;
-    HousesQueryHouseSize: TIntegerField;
-    HousesQueryLotSize: TFMTBCDField;
-    HousesQueryPrice: TCurrencyField;
-    HousesQueryCoordinates: TWideStringField;
-    HousesQueryFeatures: TWideMemoField;
-    HousesQueryYearBuilt: TIntegerField;
-    HousesQueryType: TSmallintField;
-    HousesQueryStatus: TSmallintField;
-    HousesQueryImage: TWideStringField;
-    HousesQueryAgentId: TLargeintField;
     procedure DataModuleDestroy(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
     procedure ConnectionBeforeConnect(Sender: TObject);
@@ -60,7 +36,7 @@ type
   end;
 
 var
-  RealStateRepository: TRealStateRepository;
+  s: TRepository;
 
 implementation
 
@@ -68,17 +44,17 @@ implementation
 
 {$R *.dfm}
 
-procedure TRealStateRepository.DataModuleDestroy(Sender: TObject);
+procedure TRepository.DataModuleDestroy(Sender: TObject);
 begin
   Connection.Close;
 end;
 
-procedure TRealStateRepository.DataModuleCreate(Sender: TObject);
+procedure TRepository.DataModuleCreate(Sender: TObject);
 begin
   Connection.Open();
 end;
 
-procedure TRealStateRepository.ConnectionBeforeConnect(Sender: TObject);
+procedure TRepository.ConnectionBeforeConnect(Sender: TObject);
 begin
   if IsDebugMode then
     Connection.Params.Values['Server'] := '10.0.2.2'
@@ -86,7 +62,7 @@ begin
     Connection.Params.Values['Server'] := '127.0.0.1';
 end;
 
-function TRealStateRepository.IsDebugMode: Boolean;
+function TRepository.IsDebugMode: Boolean;
 begin
 {$WARNINGS OFF}
   Result := DebugHook <> 0;

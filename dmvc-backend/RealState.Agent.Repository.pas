@@ -28,7 +28,7 @@ type
     AgentQueryPicture: TWideStringField;
     procedure DataModuleCreate(Sender: TObject);
   private
-    fRepository: TRealStateRepository;
+    fRepository: TRepository;
     procedure BindConnection;
   protected
     function Connection: TFDConnection;
@@ -57,7 +57,7 @@ end;
 
 procedure TAgentRepository.DataModuleCreate(Sender: TObject);
 begin
-  fRepository := TRealStateRepository.Create(Self);
+  fRepository := TRepository.Create(Self);
   BindConnection;
 end;
 

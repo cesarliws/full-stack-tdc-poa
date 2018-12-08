@@ -44,27 +44,31 @@ begin
 end;
 
 procedure THouseController.GetHouses;
+var
+  repository: THouseRepository;
 begin
   Writeln(Context.Request.PathInfo);
-  var  Repository := THouseRepository.Create(nil);
+  repository := THouseRepository.Create(nil);
   try
-    Render(Repository.GetHouses);
+    Render(repository.GetHouses);
   finally
-    Repository.Free;
+    repository.Free;
   end;
 end;
 
 procedure THouseController.SetFavorite(id: Int64);
+var
+  body: TJsonObject;
+  repository: THouseRepository;
 begin
   Writeln(Context.Request.PathInfo + ', ' + Context.Request.Body);
-  var Body := TJsonObject.Parse(Context.Request.Body) as TJsonObject;
+  body := TJsonObject.Parse(Context.Request.Body) as TJsonObject;
 
-  var
-  Repository := THouseRepository.Create(nil);
+  repository := THouseRepository.Create(nil);
   try
-    Repository.SetFavorite(id, Body['favorite'].BoolValue);
+    repository.SetFavorite(id, body['favorite'].BoolValue);
   finally
-    Repository.Free;
+    repository.Free;
   end;
 end;
 

@@ -8,7 +8,6 @@ uses
   JsonDataObjects;
 
 type
-
   [MVCPath('/api/agents')]
   TAgentController = class(TMVCController)
   public
@@ -26,9 +25,11 @@ uses
   RealState.Agent.Repository;
 
 procedure TAgentController.GetAgents;
+var
+  repository: TAgentRepository;
 begin
   Writeln(Context.Request.PathInfo);
-  var repository := TAgentRepository.Create(nil);
+  repository := TAgentRepository.Create(nil);
   try
     Render(repository.GetAgents);
   finally
