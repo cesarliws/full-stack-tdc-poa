@@ -1,23 +1,9 @@
-object RealStateRepository: TRealStateRepository
+object HouseRepository: THouseRepository
   OldCreateOrder = False
   OnCreate = DataModuleCreate
-  OnDestroy = DataModuleDestroy
-  Height = 397
-  Width = 510
-  object Connection: TFDConnection
-    Params.Strings = (
-      'Database=tdc_real_state'
-      'User_Name=postgres'
-      'Password=postgres'
-      'Server=10.0.2.2'
-      'DriverID=PG')
-    LoginPrompt = False
-    BeforeConnect = ConnectionBeforeConnect
-    Left = 128
-    Top = 80
-  end
+  Height = 513
+  Width = 751
   object HousesQuery: TFDQuery
-    Connection = Connection
     SQL.Strings = (
       'SELECT '
       '  h."ID", '
@@ -42,8 +28,8 @@ object RealStateRepository: TRealStateRepository
       'LEFT join "AgentHouse" ah '
       '  on h."ID"  = ah."HouseId"  '
       'order by h."ID"')
-    Left = 256
-    Top = 168
+    Left = 96
+    Top = 72
     object HousesQueryID: TLargeintField
       FieldName = 'ID'
       Origin = '"ID"'
@@ -126,40 +112,6 @@ object RealStateRepository: TRealStateRepository
       AutoGenerateValue = arDefault
       FieldName = 'AgentId'
       Origin = '"AgentId"'
-    end
-  end
-  object AgentQuery: TFDQuery
-    Connection = Connection
-    SQL.Strings = (
-      'SELECT'
-      '  "ID",'
-      '  "Name",'
-      '  "Phone",'
-      '  "Picture"'
-      'FROM'
-      '  "Agent"'
-      'order by "ID"')
-    Left = 256
-    Top = 248
-    object AgentQueryID: TLargeintField
-      FieldName = 'ID'
-      Origin = '"ID"'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object AgentQueryName: TWideStringField
-      FieldName = 'Name'
-      Origin = '"Name"'
-      Size = 100
-    end
-    object AgentQueryPhone: TWideStringField
-      FieldName = 'Phone'
-      Origin = '"Phone"'
-      Size = 100
-    end
-    object AgentQueryPicture: TWideStringField
-      FieldName = 'Picture'
-      Origin = '"Picture"'
-      Size = 2000
     end
   end
 end

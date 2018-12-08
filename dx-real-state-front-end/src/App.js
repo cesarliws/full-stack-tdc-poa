@@ -28,7 +28,7 @@ class App extends React.Component {
       currentHouse: null,
       housesSource: [],
       isLoading: true,
-      remoteDataSource: false,
+      remoteDataSource: true,
       saveJsonData: false
     };
   }
@@ -47,13 +47,13 @@ class App extends React.Component {
     var houses = [];
     var agents = [];
 
-    fetch("http://localhost:8080/api/houses")
+    fetch("http://localhost:8080/api/houses/")
       .then(response => {
         if (response.ok) {
           response.json().then(data => {
             houses = data;
 
-            fetch("http://localhost:8080/api/agents")
+            fetch("http://localhost:8080/api/agents/")
               .then(response => {
                 if (response.ok) {
                   response.json().then(data => {

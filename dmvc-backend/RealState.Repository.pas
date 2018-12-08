@@ -27,6 +27,11 @@ uses
 
 type
   TRealStateRepository = class(TDataModule)
+    AgentQuery: TFDQuery;
+    AgentQueryID: TLargeintField;
+    AgentQueryName: TWideStringField;
+    AgentQueryPhone: TWideStringField;
+    AgentQueryPicture: TWideStringField;
     Connection: TFDConnection;
     HousesQuery: TFDQuery;
     HousesQueryID: TLargeintField;
@@ -47,19 +52,11 @@ type
     HousesQueryStatus: TSmallintField;
     HousesQueryImage: TWideStringField;
     HousesQueryAgentId: TLargeintField;
-    AgentQuery: TFDQuery;
-    AgentQueryID: TLargeintField;
-    AgentQueryName: TWideStringField;
-    AgentQueryPhone: TWideStringField;
-    AgentQueryPicture: TWideStringField;
+    procedure DataModuleDestroy(Sender: TObject);
     procedure DataModuleCreate(Sender: TObject);
     procedure ConnectionBeforeConnect(Sender: TObject);
   private
     function IsDebugMode: Boolean;
-  public
-    function GetHouses: TDataSet;
-    procedure SetFavorite(id: Int64; favorite: boolean);
-    function GetAgents: TDataSet;
   end;
 
 var
@@ -70,6 +67,11 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+procedure TRealStateRepository.DataModuleDestroy(Sender: TObject);
+begin
+  Connection.Close;
+end;
 
 procedure TRealStateRepository.DataModuleCreate(Sender: TObject);
 begin
@@ -82,29 +84,6 @@ begin
     Connection.Params.Values['Server'] := '10.0.2.2'
   else
     Connection.Params.Values['Server'] := '127.0.0.1';
-end;
-
-{ TRealStateRepository }
-
-function TRealStateRepository.GetAgents: TDataSet;
-begin
-  Result := TFDMemTable.Create(nil);
-  AgentQuery.Open;
-  TFDTable(Result).CopyDataSet(AgentQuery, [coStructure, coRestart, coAppend]);
-end;
-
-function TRealStateRepository.GetHouses: TDataSet;
-begin
-  Result := TFDMemTable.Create(nil);
-  HousesQuery.Open;
-  TFDTable(Result).CopyDataSet(HousesQuery, [coStructure, coRestart, coAppend]);
-end;
-
-procedure TRealStateRepository.SetFavorite(id: Int64; favorite: boolean);
-const
-  UPDATE_FAVORITE_SQL = 'update "House" set "Favorite" = :p0 where "ID" = :p1 and "Favorite" <> :p2';
-begin
-  Connection.ExecSQL(UPDATE_FAVORITE_SQL, [favorite, id, favorite]);
 end;
 
 function TRealStateRepository.IsDebugMode: Boolean;

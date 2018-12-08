@@ -6,3 +6,6 @@
 /dmvc-backend/dmvc-backend.zip
 /dmvc-backend/*.tvsconfig
 /react-app
+/dmvc-backend/*.identcache
+/dmvc-backend/*.local
+/dmvc-backend/*.stat

@@ -29,7 +29,8 @@ uses
   MVCFramework.Commons,
   MVCFramework.Middleware.Compression,
   MVCFramework.Middleware.CORS,
-  RealState.Controller;
+  RealState.Agent.Controller,
+  RealState.House.Controller;
 
 procedure TRealStateWebModule.WebModuleCreate(Sender: TObject);
 begin
@@ -67,7 +68,8 @@ begin
       Config[TMVCConfigKey.FallbackResource] := 'index.html';
     end);
 
-  FMVC.AddController(TRealStateController);
+  FMVC.AddController(TAgentController);
+  FMVC.AddController(THouseController);
 
   // To enable compression (deflate, gzip) just add this middleware as the last one
   FMVC.AddMiddleware(TMVCCompressionMiddleware.Create);
