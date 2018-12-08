@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1EE79ADF-3167-44B9-A67E-C7063124E6D5}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\..\projects\github.com\danieleteti\delphimvcframework\samples\articles_crud_server\articles_crud.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ReadStateBackEnd.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="articles_crud">
+        <MSBuild Projects="..\..\projects\github.com\danieleteti\delphimvcframework\samples\articles_crud_server\articles_crud.dproj"/>
+    </Target>
+    <Target Name="articles_crud:Clean">
+        <MSBuild Projects="..\..\projects\github.com\danieleteti\delphimvcframework\samples\articles_crud_server\articles_crud.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="articles_crud:Make">
+        <MSBuild Projects="..\..\projects\github.com\danieleteti\delphimvcframework\samples\articles_crud_server\articles_crud.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ReadStateBackEnd">
+        <MSBuild Projects="ReadStateBackEnd.dproj"/>
+    </Target>
+    <Target Name="ReadStateBackEnd:Clean">
+        <MSBuild Projects="ReadStateBackEnd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ReadStateBackEnd:Make">
+        <MSBuild Projects="ReadStateBackEnd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="articles_crud;ReadStateBackEnd"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="articles_crud:Clean;ReadStateBackEnd:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="articles_crud:Make;ReadStateBackEnd:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
