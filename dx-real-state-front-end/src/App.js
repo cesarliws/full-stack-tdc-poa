@@ -33,8 +33,7 @@ class App extends React.Component {
     };
   }
 
-  componentDidMount() {
-    if (this.state.remoteDataSource)
+  componentDidMount() {    if (this.state.remoteDataSource)
       this.loadData();
     else {
       this.setLoadedData(housesDataSource)

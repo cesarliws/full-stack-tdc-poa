@@ -9,3 +9,4 @@
 /dmvc-backend/*.identcache
 /dmvc-backend/*.local
 /dmvc-backend/*.stat
+/dmvc-backend/__recovery
