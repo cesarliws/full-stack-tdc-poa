@@ -15,6 +15,8 @@ type
     procedure WebModuleDestroy(Sender: TObject);
   private
     FMVC: TMVCEngine;
+    procedure RegisterControllers;
+    procedure RegisterMiddlewares;
   end;
 
 var
@@ -31,6 +33,19 @@ uses
   MVCFramework.Middleware.CORS,
   RealState.Agent.Controller,
   RealState.House.Controller;
+
+procedure TRealStateWebModule.RegisterControllers;
+begin
+  FMVC.AddController(TAgentController);
+  FMVC.AddController(THouseController);
+end;
+
+procedure TRealStateWebModule.RegisterMiddlewares;
+begin
+  // To enable compression (deflate, gzip) just add this middleware as the last one
+  FMVC.AddMiddleware(TMVCCompressionMiddleware.Create);
+  FMVC.AddMiddleware(TCORSMiddleware.Create);
+end;
 
 procedure TRealStateWebModule.WebModuleCreate(Sender: TObject);
 begin
@@ -68,12 +83,8 @@ begin
       Config[TMVCConfigKey.FallbackResource] := 'index.html';
     end);
 
-  FMVC.AddController(TAgentController);
-  FMVC.AddController(THouseController);
-
-  // To enable compression (deflate, gzip) just add this middleware as the last one
-  FMVC.AddMiddleware(TMVCCompressionMiddleware.Create);
-  FMVC.AddMiddleware(TCORSMiddleware.Create);
+  RegisterControllers;
+  RegisterMiddlewares;
 end;
 
 procedure TRealStateWebModule.WebModuleDestroy(Sender: TObject);

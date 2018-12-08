@@ -45,6 +45,7 @@ end;
 
 procedure THouseController.GetHouses;
 begin
+  Writeln(Context.Request.PathInfo);
   var  Repository := THouseRepository.Create(nil);
   try
     Render(Repository.GetHouses);
@@ -55,7 +56,7 @@ end;
 
 procedure THouseController.SetFavorite(id: Int64);
 begin
-  Writeln('SetFavorite: ' + id.ToString + ', ' + Context.Request.Body);
+  Writeln(Context.Request.PathInfo + ', ' + Context.Request.Body);
   var Body := TJsonObject.Parse(Context.Request.Body) as TJsonObject;
 
   var

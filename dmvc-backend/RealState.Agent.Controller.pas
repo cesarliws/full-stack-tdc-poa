@@ -12,7 +12,6 @@ type
   [MVCPath('/api/agents')]
   TAgentController = class(TMVCController)
   public
-  public
     [MVCPath('/')]
     [MVCHTTPMethod([httpGET])]
     procedure GetAgents;
@@ -28,6 +27,7 @@ uses
 
 procedure TAgentController.GetAgents;
 begin
+  Writeln(Context.Request.PathInfo);
   var repository := TAgentRepository.Create(nil);
   try
     Render(repository.GetAgents);

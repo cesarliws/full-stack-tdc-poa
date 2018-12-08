@@ -47,7 +47,7 @@ begin
     repeat
       if command.IsEmpty then
       begin
-        Write('  ');
+        Write('');
         ReadLn(command)
       end;
 
