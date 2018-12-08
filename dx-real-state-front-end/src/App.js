@@ -206,7 +206,7 @@ class App extends React.Component {
   };
 
   async postFavorite(houseid, favorite) {
-    fetch(`http://localhost:8080/api/house/${houseid}`, {
+    fetch(`http://localhost:8080/api/houses/${houseid}`, {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -215,6 +215,16 @@ class App extends React.Component {
       body: JSON.stringify({
         favorite: favorite
       })
+    })
+    .then(response => {
+      if (!response.ok) {
+        notify("Erro ao Salvar Casa em Favoritos: " + response.statusText, "error", 2000);
+        console.log(response);
+        }
+    })
+    .catch(err => {
+      notify("Erro ao Salvar Casa em Favoritos: " + err, "error", 2000);
+      console.log(err);
     });
   }
 

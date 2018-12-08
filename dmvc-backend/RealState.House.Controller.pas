@@ -19,7 +19,7 @@ type
     [MVCHTTPMethod([httpGET])]
     procedure GetHouses;
 
-    [MVCPath('/house/($id)')]
+    [MVCPath('/($id)')]
     [MVCHTTPMethod([httpPOST])]
     procedure SetFavorite(id: Int64);
 
