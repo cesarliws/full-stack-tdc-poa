@@ -9,7 +9,7 @@ uses
   Web.WebBroker,
   RealState.House.Controller in 'RealState.House.Controller.pas',
   RealState.WebModule in 'RealState.WebModule.pas' {RealStateWebModule: TWebModule},
-  RealState.Repository in 'RealState.Repository.pas' {RealStateRepository: TDataModule},
+  RealState.Repository in 'RealState.Repository.pas' {s: TDataModule},
   Startup in 'Startup.pas',
   RealState.Agent.Repository in 'RealState.Agent.Repository.pas' {AgentRepository: TDataModule},
   RealState.House.Repository in 'RealState.House.Repository.pas' {HouseRepository: TDataModule},

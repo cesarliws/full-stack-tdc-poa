@@ -97,7 +97,7 @@
             <DesignClass>TWebModule</DesignClass>
         </DCCReference>
         <DCCReference Include="RealState.Repository.pas">
-            <Form>RealStateRepository</Form>
+            <Form>s</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
