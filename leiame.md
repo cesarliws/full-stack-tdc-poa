@@ -43,12 +43,17 @@ Como criar front-end web rapidamente com a biblioteca React.js, para consumir o 
 * https://danieleteti.gitbooks.io/delphimvcframework/content/chapter_getting_started.html
 * Compilar e executar o projeto "dmvc-backend\ReadStateBackEnd.dproj" com o Delphi
 
-### Front end
+### Front-end
 
 * Instalar Node.js
   * https://nodejs.org/en/download/
 
 * cd full-stack-tdc-poa\dx-real-state-front-end
+
+### npm ou yarn
+
+* Você pode usar o npm ou yarn para instalar dependências e executar o front-end.
+* O yarn tem melhor performance.
 
 #### npm
 
@@ -58,9 +63,7 @@ Como criar front-end web rapidamente com a biblioteca React.js, para consumir o 
 * Executar o front-end
   * npm start
 
-ou:
-
-#### yarn
+#### ou, yarn
 
 * Instalar yarn
   * npm install yarn
@@ -73,7 +76,7 @@ ou:
 
 ### Executar somente o front-end
 
-* "dx-real-state-front-end\src\App.js"
-* Alterar remoteDataSource para false no constructor.
+* Editar o arquivo "dx-real-state-front-end\src\App.js"
+* Alterar "remoteDataSource" para false no constructor.
 
 ![state.remoteDataSource](./images/remote-datasource.png)
