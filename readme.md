@@ -10,6 +10,10 @@ Como criar frontend web rapidamente com a biblioteca React.js, para consumir o b
 * Servidor RESTful  com DMVC Framework e FireDAC
 * Introdução ao Desenvolvimento frontend JavaScript com React.js
 
+## Clonar repositório
+
+* git clone https://github.com/cesarliws/full-stack-tdc-poa.git
+
 ## Instalação Delphi MVC Framework
 
 * https://danieleteti.gitbooks.io/delphimvcframework/content/chapter_getting_started.html
@@ -20,12 +24,10 @@ Como criar frontend web rapidamente com a biblioteca React.js, para consumir o b
 * Instalar Node.js
   * https://nodejs.org/en/download/
 
-* Clonar repositório
-  * git clone https://github.com/cesarliws/full-stack-tdc-poa.git
-  * cd full-stack-tdc-poa\dx-real-state-front-end
+* cd full-stack-tdc-poa\dx-real-state-front-end
 
 ### npm
-  
+
 * Instalar as dependências do projeto
   * npm install
 
