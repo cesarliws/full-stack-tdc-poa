@@ -16,9 +16,14 @@ How to create a simple, efficient, high performance and easy to maintain back en
 
 How to create web front end quickly with the React.js library, to consume the back end created with Delphi MVC Framework.
 
-* Introduction to Web and Cloud Platform
+* Introduction to Web and Cloud Platform 
 * RESTful Server with DMVC Framework and FireDAC
 * Introduction to JavaScript frontend Development with React.js
+
+## Project Demo
+
+* Front-end built with DevExpress DevExtreme, code, data and imagens from existing example:
+    https://js.devexpress.com/Demos/WidgetsGallery/Demo/Common/DialogsAndNotificationsOverview/React/Light
 
 ![Main Window](./images/screenshot_1.png)
 ![Edit Window](./images/screenshot_2.png)

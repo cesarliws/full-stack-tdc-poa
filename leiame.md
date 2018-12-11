@@ -20,6 +20,11 @@ Como criar front-end web rapidamente com a biblioteca React.js, para consumir o 
 * Servidor RESTful  com DMVC Framework e FireDAC
 * Introdução ao Desenvolvimento frontend JavaScript com React.js
 
+## Projeto Exemplo
+
+* Front-end construído com DevExpress DevExtreme, código, registros e imagens do exemplo existente em:
+    https://js.devexpress.com/Demos/WidgetsGallery/Demo/Common/DialogsAndNotificationsOverview/React/Light
+
 ![Main Window](./images/screenshot_1.png)
 ![Edit Window](./images/screenshot_2.png)
 
