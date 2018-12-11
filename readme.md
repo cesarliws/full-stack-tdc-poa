@@ -10,7 +10,7 @@ Front-end: JS ES6 + React + DevExpress DevExtreme
 
 ## Presentation Theme
 
-Intruduction to web and cloud platform.
+Introduction to web and cloud platform.
 
 How to create a simple, efficient, high performance and easy to maintain back end server with Delphi MVC Framework.
 
