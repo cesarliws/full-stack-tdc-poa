@@ -1,16 +1,28 @@
-# Projeto full stack Delphi MVC Framework e DevExtreme React.js
+# Full stack Delphi MVC Framework and React.js DevExtreme Project
 
-Introdução as plataformas web e cloud.
+## [Clique aqui para instruções em Português](leiame)
 
-Como criar um servidor back-end cloud com Delphi MVC Framework que seja simples, eficiente, alta performance e de fácil manutenção.
+Project source files from my TDC presentation.
+The Developer Conference 2018 - Brazil - Delphi Track
 
-Como criar front-end web rapidamente com a biblioteca React.js, para consumir o backend criado com Delphi MVC Framework.
+Back-end: Delphi + DMVC Framework + FireDAC + PostgreSQL
+Front-end: JS ES6 + React + DevExpress DevExtreme
 
-* Introdução a Plataforma Web e Cloud
-* Servidor RESTful  com DMVC Framework e FireDAC
-* Introdução ao Desenvolvimento frontend JavaScript com React.js
+## Presentation Theme
 
-## Clonar repositório
+Intruduction to web and cloud platform.
+
+How to create a simple, efficient, high performance and easy to maintain back end server with Delphi MVC Framework.
+
+How to create web front end quickly with the React.js library, to consume the back end created with Delphi MVC Framework.
+
+* Introduction to Web and Cloud Platform
+* RESTful Server with DMVC Framework and FireDAC
+* Introduction to JavaScript frontend Development with React.js
+
+## Instructions
+
+### Clone repository
 
 * git clone https://github.com/cesarliws/full-stack-tdc-poa.git
 
@@ -18,42 +30,42 @@ Como criar front-end web rapidamente com a biblioteca React.js, para consumir o 
 
 * dmvc-backend\db\dmvc-backend-db.backup
 
-## Instalação Delphi MVC Framework
+## Install Delphi MVC Framework
 
 * https://danieleteti.gitbooks.io/delphimvcframework/content/chapter_getting_started.html
-* Compilar e executar o projeto "dmvc-backend\ReadStateBackEnd.dproj" no delphi
+* Compile and run the project "dmvc-backend\ReadStateBackEnd.dproj" with Delphi
 
-## Instalação - front-end react
+## Front end
 
-* Instalar Node.js
+* Install Node.js
   * https://nodejs.org/en/download/
 
 * cd full-stack-tdc-poa\dx-real-state-front-end
 
 ### npm
 
-* Instalar as dependências do projeto
+* Install project dependencies
   * npm install
 
-* Executar o front-end
+* Run front end
   * npm start
 
-ou:
+or:
 
 ### yarn
 
-* Instalar yarn
+* Install yarn
   * npm install yarn
 
-* Instalar as dependências do projeto
+* Install project dependencies
   * yarn
 
-* Executar o front-end
+* Run front end
   * yarn run start
 
-## Executar somente o front-end
+## Run only front end
 
-* "dx-real-state-front-end\src\App.js"
-* Alterar remoteDataSource para false no constructor.
+* Edit "dx-real-state-front-end\src\App.js"
+* Change remoteDataSource to false inside constructor.
 
 ![state.remoteDataSource](./images/remote-datasource.png)
