@@ -1,6 +1,6 @@
 # Projeto full stack Delphi MVC Framework e DevExtreme React.js
 
-## [Click here for English instructions](readme)
+## [Click here for English instructions](readme.md)
 
 Arquivos fontes do projeto da minha apresentação no TDC.
 The Developer Conference 2018, Porto Alegre - Brasil - Trilha Delphi

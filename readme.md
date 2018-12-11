@@ -1,6 +1,6 @@
 # Full stack Delphi MVC Framework and React.js DevExtreme Project
 
-## [Clique aqui para instruções em Português](leiame)
+## [Clique aqui para instruções em Português](leiame.md)
 
 Project source files from my TDC presentation.
 The Developer Conference 2018 - Brazil - Delphi Track
