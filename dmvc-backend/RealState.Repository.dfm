@@ -1,4 +1,4 @@
-object s: Ts
+object Repository: TRepository
   OldCreateOrder = False
   OnCreate = DataModuleCreate
   OnDestroy = DataModuleDestroy

@@ -72,7 +72,6 @@ begin
       finally
         command := '';
       end;
-
     until False;
 
   finally

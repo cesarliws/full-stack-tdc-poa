@@ -11,9 +11,6 @@ type
 
   [MVCPath('/api/houses')]
   THouseController = class(TMVCController)
-  protected
-    procedure OnBeforeAction(Context: TWebContext; const AActionName: string; var Handled: Boolean); override;
-    procedure OnAfterAction(Context: TWebContext; const AActionName: string); override;
   public
     [MVCPath('/')]
     [MVCHTTPMethod([httpGET])]
@@ -22,7 +19,6 @@ type
     [MVCPath('/($id)')]
     [MVCHTTPMethod([httpPOST])]
     procedure SetFavorite(id: Int64);
-
   end;
 
 implementation
@@ -30,18 +26,7 @@ implementation
 uses
   System.StrUtils,
   System.SysUtils,
-  MVCFramework.Logger,
   RealState.House.Repository;
-
-procedure THouseController.OnAfterAction(Context: TWebContext; const AActionName: string);
-begin
-  inherited;
-end;
-
-procedure THouseController.OnBeforeAction(Context: TWebContext; const AActionName: string; var Handled: Boolean);
-begin
-  inherited;
-end;
 
 procedure THouseController.GetHouses;
 var

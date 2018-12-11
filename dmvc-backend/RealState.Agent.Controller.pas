@@ -21,7 +21,6 @@ implementation
 uses
   System.StrUtils,
   System.SysUtils,
-  MVCFramework.Logger,
   RealState.Agent.Repository;
 
 procedure TAgentController.GetAgents;

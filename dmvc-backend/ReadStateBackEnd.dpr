@@ -4,16 +4,18 @@ program ReadStateBackEnd;
 
 uses
   System.SysUtils,
+
   Web.ReqMulti,
   Web.WebReq,
   Web.WebBroker,
-  RealState.House.Controller in 'RealState.House.Controller.pas',
-  RealState.WebModule in 'RealState.WebModule.pas' {RealStateWebModule: TWebModule},
-  RealState.Repository in 'RealState.Repository.pas' {s: TDataModule},
+
   Startup in 'Startup.pas',
+  RealState.Agent.Controller in 'RealState.Agent.Controller.pas',
   RealState.Agent.Repository in 'RealState.Agent.Repository.pas' {AgentRepository: TDataModule},
+  RealState.House.Controller in 'RealState.House.Controller.pas',
   RealState.House.Repository in 'RealState.House.Repository.pas' {HouseRepository: TDataModule},
-  RealState.Agent.Controller in 'RealState.Agent.Controller.pas';
+  RealState.Repository in 'RealState.Repository.pas' {s: TDataModule},
+  RealState.WebModule in 'RealState.WebModule.pas' {RealStateWebModule: TWebModule};
 
 {$R *.res}
 

@@ -1,5 +1,7 @@
 unit RealState.Repository;
 
+{.$DEFINE IS_VIRTUAL_BOX}
+
 interface
 
 uses
@@ -33,10 +35,11 @@ type
     procedure ConnectionBeforeConnect(Sender: TObject);
   private
     function IsDebugMode: Boolean;
+    function IsVirtualBox: Boolean;
   end;
 
 var
-  s: TRepository;
+  Repository: TRepository;
 
 implementation
 
@@ -56,7 +59,7 @@ end;
 
 procedure TRepository.ConnectionBeforeConnect(Sender: TObject);
 begin
-  if IsDebugMode then
+  if IsDebugMode and IsVirtualBox then
     Connection.Params.Values['Server'] := '10.0.2.2'
   else
     Connection.Params.Values['Server'] := '127.0.0.1';
@@ -67,6 +70,11 @@ begin
 {$WARNINGS OFF}
   Result := DebugHook <> 0;
 {$WARNINGS ON}
+end;
+
+function TRepository.IsVirtualBox: Boolean;
+begin
+  Result := {$IFDEF IS_VIRTUAL_BOX}True{$ELSE}False{$ENDIF};
 end;
 
 end.
