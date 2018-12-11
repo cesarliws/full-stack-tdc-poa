@@ -20,29 +20,32 @@ How to create web front end quickly with the React.js library, to consume the ba
 * RESTful Server with DMVC Framework and FireDAC
 * Introduction to JavaScript frontend Development with React.js
 
+![Main Window](./images/screenshot_1.png)
+![Edit Window](./images/screenshot_2.png)
+
 ## Instructions
 
 ### Clone repository
 
 * git clone https://github.com/cesarliws/full-stack-tdc-poa.git
 
-## Restore Database backup - PostgreSQL
+### Restore Database backup - PostgreSQL
 
 * dmvc-backend\db\dmvc-backend-db.backup
 
-## Install Delphi MVC Framework
+### Install Delphi MVC Framework
 
 * https://danieleteti.gitbooks.io/delphimvcframework/content/chapter_getting_started.html
 * Compile and run the project "dmvc-backend\ReadStateBackEnd.dproj" with Delphi
 
-## Front end
+### Front end
 
 * Install Node.js
   * https://nodejs.org/en/download/
 
 * cd full-stack-tdc-poa\dx-real-state-front-end
 
-### npm
+#### npm
 
 * Install project dependencies
   * npm install
@@ -52,7 +55,7 @@ How to create web front end quickly with the React.js library, to consume the ba
 
 or:
 
-### yarn
+#### yarn
 
 * Install yarn
   * npm install yarn
@@ -63,7 +66,7 @@ or:
 * Run front end
   * yarn run start
 
-## Run only front end
+### Run only front end
 
 * Edit "dx-real-state-front-end\src\App.js"
 * Change remoteDataSource to false inside constructor.

@@ -20,27 +20,32 @@ Como criar front-end web rapidamente com a biblioteca React.js, para consumir o 
 * Servidor RESTful  com DMVC Framework e FireDAC
 * Introdução ao Desenvolvimento frontend JavaScript com React.js
 
-## Clonar repositório
+![Main Window](./images/screenshot_1.png)
+![Edit Window](./images/screenshot_2.png)
+
+## Instruções
+
+### Clonar repositório
 
 * git clone https://github.com/cesarliws/full-stack-tdc-poa.git
 
-## Restaurar o backup do banco de dados - PostgreSQL
+### Restaurar o backup do banco de dados - PostgreSQL
 
 * dmvc-backend\db\dmvc-backend-db.backup
 
-## Instalar Delphi MVC Framework
+### Instalar Delphi MVC Framework
 
 * https://danieleteti.gitbooks.io/delphimvcframework/content/chapter_getting_started.html
 * Compilar e executar o projeto "dmvc-backend\ReadStateBackEnd.dproj" com o Delphi
 
-## Front end
+### Front end
 
 * Instalar Node.js
   * https://nodejs.org/en/download/
 
 * cd full-stack-tdc-poa\dx-real-state-front-end
 
-### npm
+#### npm
 
 * Instalar as dependências do projeto
   * npm install
@@ -50,7 +55,7 @@ Como criar front-end web rapidamente com a biblioteca React.js, para consumir o 
 
 ou:
 
-### yarn
+#### yarn
 
 * Instalar yarn
   * npm install yarn
@@ -61,7 +66,7 @@ ou:
 * Executar o front-end
   * yarn run start
 
-## Executar somente o front-end
+### Executar somente o front-end
 
 * "dx-real-state-front-end\src\App.js"
 * Alterar remoteDataSource para false no constructor.
