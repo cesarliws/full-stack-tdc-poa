@@ -12,13 +12,13 @@ Front-end: JS ES6 + React + DevExpress DevExtreme
 
 Introduction to web and cloud platform.
 
-How to create a simple, efficient, high performance and easy to maintain back end server with Delphi MVC Framework.
+How to create a simple, efficient, high performance and easy to maintain back-end server with Delphi MVC Framework.
 
-How to create web front end quickly with the React.js library, to consume the back end created with Delphi MVC Framework.
+How to create web front-end quickly with React.js library, to consume the back end created with Delphi MVC Framework.
 
-* Introduction to Web and Cloud Platform 
-* RESTful Server with DMVC Framework and FireDAC
-* Introduction to JavaScript frontend Development with React.js
+* Introduction to Web and Cloud Platform
+* RESTful Server with DMVC Framework, FireDAC and PostgreSQL
+* Introduction to JavaScript front-end Development with React.js
 
 ## Project Demo
 
