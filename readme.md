@@ -14,7 +14,7 @@ Introduction to web and cloud platform.
 
 How to create a simple, efficient, high performance and easy to maintain back-end server with Delphi MVC Framework.
 
-How to create web front-end quickly with React.js library, to consume the back end created with Delphi MVC Framework.
+How to create web front-end quickly with React.js library, to consume the back-end created with Delphi MVC Framework.
 
 * Introduction to Web and Cloud Platform
 * RESTful Server with DMVC Framework, FireDAC and PostgreSQL
@@ -43,24 +43,27 @@ How to create web front-end quickly with React.js library, to consume the back e
 * https://danieleteti.gitbooks.io/delphimvcframework/content/chapter_getting_started.html
 * Compile and run the project "dmvc-backend\ReadStateBackEnd.dproj" with Delphi
 
-### Front end
+### Front-end
 
 * Install Node.js
   * https://nodejs.org/en/download/
 
 * cd full-stack-tdc-poa\dx-real-state-front-end
 
+### npm or yarn
+
+* You can use npm or yarn to install dependencies and execute the front-end.
+* Yarn has better performance.
+
 #### npm
 
 * Install project dependencies
   * npm install
 
-* Run front end
+* Run front-end
   * npm start
 
-or:
-
-#### yarn
+#### or, yarn
 
 * Install yarn
   * npm install yarn
@@ -68,12 +71,12 @@ or:
 * Install project dependencies
   * yarn
 
-* Run front end
+* Run front-end
   * yarn run start
 
-### Run only front end
+### Run only the front-end
 
-* Edit "dx-real-state-front-end\src\App.js"
-* Change remoteDataSource to false inside constructor.
+* Edit the "dx-real-state-front-end\src\App.js" file.
+* Change "remoteDataSource" to false inside the constructor.
 
 ![state.remoteDataSource](./images/remote-datasource.png)
